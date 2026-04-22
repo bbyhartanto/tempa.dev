@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[300px] h-[300px] flex items-center justify-center text-white glass-box">
-    <slot />
+  <div class="w-[399px] h-[399px] flex items-center justify-center text-white glass-box">
+    <slot/>
   </div>
 </template>
 

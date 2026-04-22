@@ -28,3 +28,19 @@ Install dependencies, then run:
 npm install
 npm run dev
 ```
+
+## Deploy to Hostinger
+
+This project includes a deploy script that:
+
+- builds static output with `nuxt generate`
+- ensures the target directory exists using `mkdir -p`
+- uploads `dist/` to `/home/u876211904/domains/tempa.dev/public_html/foder-tempa.dev`
+
+Set your SSH variables, then deploy:
+
+```bash
+export HOSTINGER_USER="u876211904"
+export HOSTINGER_HOST="your.hostinger.server"
+npm run deploy:hostinger
+```

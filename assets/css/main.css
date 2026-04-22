@@ -33,7 +33,7 @@ html {
 body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background:#fff;
+  background: #fff;
   color: var(--text);
   min-height: 100vh;
 }
@@ -54,8 +54,7 @@ textarea {
   font: inherit;
 }
 
-.word-hero section
-.shell {
+.word-hero section .shell {
   width: min(calc(100% - 32px), var(--container));
   margin: 16px auto;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.46));
@@ -454,9 +453,9 @@ textarea {
   color: white;
 }
 
-.glass-box{
-  background-color: #d7d7d7;
-  filter: blur(2px);
+.glass-box {
+  background-color: rgba(243, 243, 243, 0.5);
+  backdrop-filter: blur(7px);
 }
 
 .site-footer .container {
