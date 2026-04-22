@@ -47,47 +47,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="mx-auto max-w-[1440px] px-4 sm:px-8 bg-white" ref="motionScope">
-    <main class="mt-12 ">
-      
-      <section class="word-hero text-center">
-        <div class="flex items-center justify-center p-12" data-reveal style="background-color: red;">
-          <div class="bg-green-100 flex-grow">
+    <main>
+      <section class="word-hero text-center mt-12">
+        <div class="flex items-center justify-center p-12">
+          <div class="hero-copywritting here">
               <h1 class="text-center text-5xl">{{ t('hero.title') }}</h1>
-
-              <!-- <div class="button-row">
-                <NuxtLink :to="localePath('/#contact')" class="button primary">{{ t('hero.primaryCta') }}</NuxtLink>
-                <NuxtLink :to="localePath('/services')" class="button secondary">{{ t('hero.secondaryCta') }}</NuxtLink>
-              </div> -->
             </div>
         </div>
-  
       </section>
-      <!-- <section class="section" data-reveal>
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">{{ t('sections.blog') }}</p>
-            <h2 class="section-title">Publish like an agency that documents its edge.</h2>
-          </div>
-          <NuxtLink :to="localePath('/blog')" class="button secondary">{{ t('labels.viewAll') }}</NuxtLink>
-        </div>
-
-        <div v-if="data?.blog?.length" class="card-grid">
-          <NuxtLink v-for="post in data.blog" :key="post.path" :to="localePath(post.path)">
-            <ContentCard :item="post" :cta="t('labels.readMore')" />
-          </NuxtLink>
-        </div>
-      </section>
-
-      <section id="contact" class="section" data-reveal>
-        <div class="contact-panel">
-          <p class="section-kicker">{{ t('sections.contact') }}</p>
-          <h2 class="section-title">{{ t('contact.title') }}</h2>
-          <p class="section-copy">{{ t('contact.body') }}</p>
-        </div>
-      </section> -->
      </main>
-  </div>
- 
-
 </template>
