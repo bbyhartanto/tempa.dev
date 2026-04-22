@@ -1,8 +1,8 @@
 <template>
   <footer class="site-footer">
-    <div class="container">
+    <div class="flex gap-4 justify-center py-8 bg-black text-white">
       <p>Bandung, Indonesia</p>
-      <p>Nuxt 3 foundation with markdown collections for services, case studies, and insights.</p>
+      <p>© 2024 Tempa Studio. All rights reserved.</p>
     </div>
   </footer>
 </template>

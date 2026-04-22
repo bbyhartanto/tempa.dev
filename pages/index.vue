@@ -47,17 +47,19 @@ useSeoMeta({
 </script>
 
 <template>
-  <div ref="motionScope">
-    <main class="mx-auto max-w-[1440px] px-4 sm:px-8 bg-white">
+  <div class="mx-auto max-w-[1440px] px-4 sm:px-8 bg-white" ref="motionScope">
+    <main class="mt-12 ">
       
       <section class="word-hero text-center">
-        <div class="h-screen" data-reveal style="background-color: red;">
-          <h1 class="text-center text-5xl">{{ t('hero.title') }}</h1>
+        <div class="flex items-center justify-center p-12" data-reveal style="background-color: red;">
+          <div class="bg-green-100 flex-grow">
+              <h1 class="text-center text-5xl">{{ t('hero.title') }}</h1>
 
-          <div class="button-row">
-            <NuxtLink :to="localePath('/#contact')" class="button primary">{{ t('hero.primaryCta') }}</NuxtLink>
-            <NuxtLink :to="localePath('/services')" class="button secondary">{{ t('hero.secondaryCta') }}</NuxtLink>
-          </div>
+              <!-- <div class="button-row">
+                <NuxtLink :to="localePath('/#contact')" class="button primary">{{ t('hero.primaryCta') }}</NuxtLink>
+                <NuxtLink :to="localePath('/services')" class="button secondary">{{ t('hero.secondaryCta') }}</NuxtLink>
+              </div> -->
+            </div>
         </div>
   
       </section>
