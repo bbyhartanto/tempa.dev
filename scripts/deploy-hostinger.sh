@@ -16,15 +16,21 @@ fi
 echo "Building static site with Nuxt..."
 npm run generate
 
-if [[ ! -d "dist" ]]; then
-  echo "Error: dist directory not found after generate."
+OUTPUT_DIR=""
+if [[ -d ".output/public" ]]; then
+  OUTPUT_DIR=".output/public"
+elif [[ -d "dist" ]]; then
+  OUTPUT_DIR="dist"
+else
+  echo "Error: No output directory found after build."
+  echo "Expected one of: .output/public or dist"
   exit 1
 fi
 
 echo "Ensuring remote directory exists: ${REMOTE_PATH}"
 ssh "${REMOTE_USER}@${REMOTE_HOST}" "mkdir -p '${REMOTE_PATH}'"
 
-echo "Syncing dist/ to Hostinger..."
-rsync -avz --delete "dist/" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}/"
+echo "Syncing ${OUTPUT_DIR}/ to Hostinger..."
+rsync -avz --delete "${OUTPUT_DIR}/" "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}/"
 
 echo "Deploy complete: ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}"
