@@ -454,6 +454,10 @@ textarea {
   color: white;
 }
 
+.glass-box{
+  background-color: #d7d7d7;
+  filter: blur(2px);
+}
 
 .site-footer .container {
   display: flex;

@@ -1,59 +1,46 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: 'home'
-})
+import HomeServiceBox from '../components/HomeServiceBox.vue'
+import HomeVideoBox from '../components/HomeVideoBox.vue'
 
-const { t, locale } = useI18n()
-const localePath = useLocalePath()
-const route = useRoute()
-const collections = useContentCollections()
-const { scope } = useRevealMotion()
-
-const { data } = await useAsyncData(
-  () => `home:${route.path}`,
-  async () => {
-    const current = collections.value
-
-    const [services, caseStudies, blog] = await Promise.all([
-      queryCollection(current.services)
-        .where('draft', '=', false)
-        .order('order', 'ASC')
-        .limit(3)
-        .all(),
-      queryCollection(current.caseStudies)
-        .where('draft', '=', false)
-        .order('featured', 'DESC')
-        .order('publishedAt', 'DESC')
-        .limit(2)
-        .all(),
-      queryCollection(current.blog)
-        .where('draft', '=', false)
-        .order('publishedAt', 'DESC')
-        .limit(3)
-        .all()
-    ])
-
-    return { services, caseStudies, blog }
-  },
-  {
-    watch: [locale]
-  }
-)
-
-useSeoMeta({
-  title: 'Motion-rich digital agency',
-  description: 'Tempa designs and builds premium landing pages, audits, booking systems, and internal products with a strong content workflow.'
-})
+definePageMeta({ layout: false })
 </script>
 
 <template>
-    <main>
-      <section class="word-hero text-center mt-12">
-        <div class="flex items-center justify-center p-12">
-          <div class="hero-copywritting here">
-              <h1 class="text-center text-5xl">{{ t('hero.title') }}</h1>
-            </div>
+  <!-- Layout-free wrapper so sticky has full window scroll context, no container constraints -->
+  <div>
+    <HomeHeader />
+
+    <!-- Hero text section -->
+    <section class="word-hero text-center mt-12">
+      <div class="flex items-center justify-center p-12">
+        <div class="hero-copywritting herocopy h-[860px] content-center">
+          <h1 class="text-center text-5xl">
+            We are the digital enabler studio for brands that refuse to look ordinary in digital era.
+          </h1>
         </div>
-      </section>
-     </main>
+      </div>
+    </section>
+
+    <!-- Sticky + overlay section: siblings at root level, no overflow parent -->
+    <div class="relative">
+      <!-- This div sticks to the top while the card below scrolls over it -->
+      <div class="mt-10 sticky top-0 h-screen bg-blue-500 z-10 flex items-center justify-center">
+        <HomeVideoBox />
+      </div>
+
+      <!-- This card scrolls up over the sticky div because z-20 > z-10 -->
+      <div class="relative bg-gray-900 z-20 shadow-2xl min-h-screen">
+        <div class="grid justify-center gap-0 grid-cols-[repeat(auto-fit,300px)] pt-10">
+          <HomeServiceBox>1</HomeServiceBox>
+          <HomeServiceBox>2</HomeServiceBox>
+          <HomeServiceBox>3</HomeServiceBox>
+          <HomeServiceBox>4</HomeServiceBox>
+          <HomeServiceBox>5</HomeServiceBox>
+          <HomeServiceBox>6</HomeServiceBox>
+        </div>
+      </div>
+    </div>
+
+    <SiteFooter />
+  </div>
 </template>
