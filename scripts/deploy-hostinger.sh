@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
 REMOTE_USER="${HOSTINGER_USER:-}"
 REMOTE_HOST="${HOSTINGER_HOST:-}"
 REMOTE_PATH="/home/u876211904/domains/tempa.dev/public_html/foder-tempa.dev"
@@ -13,17 +16,21 @@ if [[ -z "$REMOTE_USER" || -z "$REMOTE_HOST" ]]; then
   exit 1
 fi
 
+cd "${PROJECT_ROOT}"
+
 echo "Building static site with Nuxt..."
 npm run generate
 
 OUTPUT_DIR=""
-if [[ -d ".output/public" ]]; then
-  OUTPUT_DIR=".output/public"
-elif [[ -d "dist" ]]; then
-  OUTPUT_DIR="dist"
+if [[ -d "${PROJECT_ROOT}/.output/public" ]]; then
+  OUTPUT_DIR="${PROJECT_ROOT}/.output/public"
+elif [[ -d "${PROJECT_ROOT}/dist" ]]; then
+  OUTPUT_DIR="${PROJECT_ROOT}/dist"
 else
   echo "Error: No output directory found after build."
-  echo "Expected one of: .output/public or dist"
+  echo "Checked:"
+  echo "  - ${PROJECT_ROOT}/.output/public"
+  echo "  - ${PROJECT_ROOT}/dist"
   exit 1
 fi
 
