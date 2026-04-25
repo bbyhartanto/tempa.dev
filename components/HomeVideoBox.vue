@@ -77,6 +77,14 @@ const videoStyle = computed(() => {
   const width  = Math.round(lerp(480, 1280, sizeT));
   const height = Math.round(lerp(240,  720, sizeT));
 
+  // Server-side fallback or wait for client
+  if (!import.meta.client) {
+    return {
+      width:  width  + 'px',
+      height: height + 'px',
+    };
+  }
+
   // Once BOTH transitions complete, sit in-flow in parent
   if (posRawT >= 1 && sizeRawT >= 1) {
     return {

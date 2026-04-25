@@ -3,6 +3,10 @@ import HomeServiceBox from '../components/HomeServiceBox.vue'
 import HomeVideoBox from '../components/HomeVideoBox.vue'
 
 definePageMeta({ layout: false })
+
+const { data: services } = await useAsyncData('services', () => 
+  queryCollection('servicesId').order('order', 'ASC').all()
+)
 </script>
 
 <template>
@@ -31,14 +35,12 @@ definePageMeta({ layout: false })
 
       <!-- This card scrolls up over the sticky div because z-20 > z-10 -->
       <div class="relative z-20 shadow-2xl min-h-screen">
-        <div class="grid grid-cols-3 pt-10 max-w-[1200px] mx-auto gap-1">
-          <HomeServiceBox>1</HomeServiceBox>
-          <HomeServiceBox>2</HomeServiceBox>
-          <HomeServiceBox>3</HomeServiceBox>
-          <HomeServiceBox>4</HomeServiceBox>
-          <HomeServiceBox>5</HomeServiceBox>
-          <HomeServiceBox>6</HomeServiceBox>
-          
+        <div class="grid grid-cols-3 pt-10 max-w-[1204px] mx-auto gap-1">
+          <HomeServiceBox 
+            v-for="service in services" 
+            :key="service.path"
+            :service="service"
+          />
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ useHead(() => ({
 </script>
 
 <template>
+  <glassi-fy mode="super" scale="60" blur="10" />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

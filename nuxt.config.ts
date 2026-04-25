@@ -20,7 +20,15 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap'
         }
+      ],
+      script: [
+        { src: '/js/glassify.js', defer: true }
       ]
+    }
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'glassi-fy'
     }
   },
   content: {
