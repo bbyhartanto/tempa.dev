@@ -11,7 +11,7 @@ definePageMeta({ layout: false })
     <!-- Cards Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-[960px] bg-white rounded-[32px] overflow-hidden border border-black/5 shadow-sm mb-16">
       <!-- Card Left -->
-      <div class="p-14 text-left flex flex-col justify-between min-h-[360px] border-b md:border-b-0 md:border-r border-black/5">
+      <div class="p-14 text-left flex flex-col justify-between min-h-[260px] border-b md:border-b-0 md:border-r border-black/5">
         <div>
           <h2 class="text-2xl font-bold mb-3">studio.tempa.dev</h2>
           <p class="text-[#6f675d] text-lg leading-snug">Tempat menempa digital presence brandmu</p>
@@ -22,7 +22,7 @@ definePageMeta({ layout: false })
       </div>
 
       <!-- Card Right -->
-      <div class="p-14 text-left flex flex-col justify-between min-h-[360px]">
+      <div class="p-14 text-left flex flex-col justify-between min-h-[260px]">
         <div>
           <h2 class="text-2xl font-bold mb-3">Tempa products development</h2>
         </div>
