@@ -67,7 +67,7 @@ definePageMeta({ layout: false })
 <section class="w-full justify-center flex p-8 "> 
     <div class="grid grid-cols-2 w-full max-w-[960px] gap-8">
         <div class="text-left">
-          <h2 class="max-w-4xl font-bold mb">Customer journey must be frictionless, trust were build by having good customer experience.</h2>
+          <h2 class="max-w-4xl font-bold mb-4">Customer journey must be frictionless, trust were build by having good customer experience.</h2>
           <p>
             Take a look at our recent experiment with local business owner to help them improve customer experience.
           </p>
