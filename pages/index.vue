@@ -8,7 +8,7 @@ definePageMeta({ layout: false })
     </div>
   <div class="min-h-screen bg-[#fdfbf6] text-[#161513] font-['Plus_Jakarta_Sans',sans-serif] flex flex-col">
     
-    <div class="flex flex-col items-center justify-center flex-grow p-6 text-center">
+    <div class="flex flex-col items-center justify-center flex-grow p-6 text-center mt-20">
       <!-- Heading -->
      <!-- Logo Section -->
     <div class="mb-10 scale-110">
@@ -24,9 +24,11 @@ definePageMeta({ layout: false })
     
 
     <!-- Email Link -->
-    <div class="mb-14 flex items-start justify-between items-center gap-8 bg-black p-4
-     rounded-[12px] text-white hover:scale-[1.02] transition-all duration-200 cursor-pointer">
-      <p class=" font-medium leading-tight mb-1">Let's work together</p>
+    <div class="flex items-center justify-between gap-8 bg-black p-4
+     rounded-[12px] text-white hover:scale-[1.02] transition-all duration-200 cursor-pointer z-[100]
+     fixed bottom-8 left-4 right-4 w-auto
+     lg:relative lg:bottom-auto lg:left-auto lg:right-auto lg:w-max lg:mx-auto lg:mt-14 lg:mb-14">
+      <p class=" font-light leading-tight">Let's work together</p>
       <a href="mailto:hello@tempa.dev" class="text-lg font-bold hover:opacity-70 transition-opacity">hello@tempa.dev</a>
     </div>  
     
