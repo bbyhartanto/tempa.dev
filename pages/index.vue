@@ -3,11 +3,10 @@ definePageMeta({ layout: false })
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#fdfbf6] text-[#161513] font-['Plus_Jakarta_Sans',sans-serif] flex flex-col">
-    <div class="fixed top-0 z-50 w-full">
+  <div class="fixed top-0 z-50 w-full">
       <HomeHeader/>
     </div>
-    
+  <div class="min-h-screen bg-[#fdfbf6] text-[#161513] font-['Plus_Jakarta_Sans',sans-serif] flex flex-col">
     
     <div class="flex flex-col items-center justify-center flex-grow p-6 text-center">
       <!-- Heading -->
@@ -30,12 +29,10 @@ definePageMeta({ layout: false })
       <p class=" font-medium leading-tight mb-1">Let's work together</p>
       <a href="mailto:hello@tempa.dev" class="text-lg font-bold hover:opacity-70 transition-opacity">hello@tempa.dev</a>
     </div>  
-
-
     
-
-    <!-- Cards Section -->
-    <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-[960px] bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm mb-16">
+<section class="w-full justify-center flex p-8">
+  <!-- Cards Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-[960px] bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm">
       <!-- Card Left -->
       <div class="p-10 text-left flex flex-col justify-between min-h-[200px] border-b md:border-b-0 md:border-r border-black/5">
         <div>
@@ -64,23 +61,27 @@ definePageMeta({ layout: false })
         <p class="text-[#b1ada7] text-[13px] uppercase tracking-[0.05em] font-medium">Mobile App</p>
       </div>
     </div>
+</section>
+    
     <!-- Quotes Section -->
+<section class="w-full justify-center flex p-8 "> 
     <div class="grid grid-cols-2 w-full max-w-[960px] gap-8">
-        <div class="mb-14 text-left">
-          <h2 class="max-w-4xl font-bold mb-4">Customer journey must be frictionless, trust were build by having good customer experience.</h2>
+        <div class="text-left">
+          <h2 class="max-w-4xl font-bold mb">Customer journey must be frictionless, trust were build by having good customer experience.</h2>
           <p>
             Take a look at our recent experiment with local business owner to help them improve customer experience.
           </p>
         </div>
-        <div class="mb-14 text-left">
-          <h2 class="max-w-4xl font-bold mb-4">Case study</h2>
-          <div class="flex gap-4 bg-white w-full rounded-[12px] p-4 justify-between items-center cursor-pointer hover:scale-[1.02] transition-all duration-200 cursor-pointer shadow-sm mb-16">
+        <div class="text-left">
+          <h2 class="mb-8 max-w-4xl font-bold">Case study</h2>
+          <div class="flex gap-4 bg-white w-full rounded-[12px] p-4 justify-between items-center cursor-pointer hover:scale-[1.02] transition-all duration-200 cursor-pointer shadow-sm">
             <p>Coming soon</p>
             <h2 class="font-medium text-2xl">crema</h2>
           </div>
         </div>
     </div>
     <!-- Works show off -->
+</section>
     <WorkCarousel />
     
     <!-- Footer -->
