@@ -32,11 +32,11 @@ definePageMeta({ layout: false })
       <a href="mailto:hello@tempa.dev" class="text-lg font-bold hover:opacity-70 transition-opacity">hello@tempa.dev</a>
     </div>  
     
-<section class="w-full justify-center flex p-8">
+<section class="w-full justify-center flex">
   <!-- Cards Section -->
     <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-[960px] bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm">
       <!-- Card Left -->
-      <div class="p-10 text-left flex flex-col justify-between min-h-[200px] border-b md:border-b-0 md:border-r border-black/5">
+      <div class=" p-8 text-left flex flex-col justify-between min-h-[200px] border-b md:border-b-0 md:border-r border-black/5">
         <div>
           <h2 class="text-2xl font-bold mb-3">Design</h2>
           <p class="text-[#6f675d] text-sm leading-snug">Design Services</p>
@@ -50,7 +50,7 @@ definePageMeta({ layout: false })
       </div>
 
       <!-- Card Right -->
-      <div class="p-10 text-left flex flex-col justify-between min-h-[200px]">
+      <div class="p-8 text-left flex flex-col justify-between min-h-[200px]">
         <div>
           <h2 class="text-2xl font-bold mb-3">Build</h2>
           <p class="text-[#6f675d] text-sm leading-snug">Product development Services</p>
@@ -66,16 +66,17 @@ definePageMeta({ layout: false })
 </section>
     
     <!-- Quotes Section -->
-<section class="w-full justify-center flex p-8 "> 
-    <div class="grid grid-cols-2 w-full max-w-[960px] gap-8">
-        <div class="text-left">
+<section class="w-full justify-center flex p-8">
+
+  <div class="flex flex-col lg:flex-row w-full max-w-[960px] gap-8">
+        <div class="text-left w-full">
+          <p class="font-medium text-lg mb-4">Case Study</p>
           <h2 class="max-w-4xl font-bold mb-4">Customer journey must be frictionless, trust were build by having good customer experience.</h2>
           <p>
             Take a look at our recent experiment with local business owner to help them improve customer experience.
           </p>
         </div>
-        <div class="text-left">
-          <h2 class="mb-8 max-w-4xl font-bold">Case study</h2>
+        <div class="text-left w-full">
           <div class="flex gap-4 bg-white w-full rounded-[12px] p-4 justify-between items-center cursor-pointer hover:scale-[1.02] transition-all duration-200 cursor-pointer shadow-sm">
             <p>Coming soon</p>
             <h2 class="font-medium text-2xl">crema</h2>
